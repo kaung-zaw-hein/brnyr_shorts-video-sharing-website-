@@ -13,15 +13,15 @@ const Sidebar = () => {
   const [ showSidebar, setShowSidebar ] = useState(true);
   const { pathname } = useRouter();
 
-  const activeLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded';
+  const activeLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#F2D202] rounded';
 
   const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded';
   return (
     <div>
-      <div className="block m-2 mt-3 ml-4 text-xl xl:hidden"
+      <div className="block w-20 mt-3 text-xl xl:hidden"
            onClick={() => setShowSidebar((prev) => !prev)}
       >
-        { showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
+        { showSidebar ? <ImCancelCircle  className="mx-auto"/> : <AiOutlineMenu className="mx-auto"/>}
       </div>
       { showSidebar && (
         <div className="flex flex-col justify-start w-20 p-3 mb-10 border-r-2 border-gray-100 xl:w-400 xl:border-0 ">
@@ -48,9 +48,9 @@ const Sidebar = () => {
                   cookiePolicy="single_host_origin"
                   render={renderProps => (
                     <button className="bg-white text-lg 
-                                        text-[#3d3d3d] font-semibold
+                                        text-[#F2D202] font-semibold
                                         px-6 py-3 rounded-md outline-none
-                                        w-full mt-3 hover:text-white hover:bg-[#3d3d3d] transition
+                                        w-full mt-3 hover:text-white hover:bg-[#F2D202] transition
                                         "
                         onClick={renderProps.onClick}
                         disabled={renderProps.disabled}>
@@ -60,12 +60,12 @@ const Sidebar = () => {
                   
                 />
               </div>
-              <Discover />
-              <SuggestedAccounts
-              />
-              <Footer />
             </div>
           )}
+          <Discover />
+          <SuggestedAccounts
+          />
+          <Footer />
         </div>
       )}
     </div>
