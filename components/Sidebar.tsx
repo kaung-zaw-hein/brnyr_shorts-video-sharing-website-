@@ -39,7 +39,7 @@ const Sidebar = () => {
           </div>
           { true && (
              <div className="hidden px-2 py-4 xl:block">
-              <p className="text-gray-400"> Log in to like and comment on videos</p>
+              <p className="text-gray-400"> Log in to like and comment on Shorts</p>
               <div className="w-full pr-4">
                 <GoogleLogin 
                   clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
