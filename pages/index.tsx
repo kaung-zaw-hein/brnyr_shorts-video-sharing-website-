@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import axios from 'axios';
 import { Video } from '../types';
+import { BASE_URL } from '../utils';
 import VideoCard from '../components/VideoCard';
 import NoResults from '../components/NoResults';
 
@@ -17,14 +18,14 @@ const Home = ({ videos }: IProps ) => {
           <VideoCard data={video} key={video._id} />
         ))
       ) : (
-          <NoResults text={"No Videos"} />
+          <NoResults />
       )}
     </div>
   )
 }
 
 export  const getServerSideProps = async () => {
-  const { data } = await axios.get(`http://localhost:3000/api/post`);
+  const { data } = await axios.get(`${BASE_URL}/api/post`);
 
   return {
     props: {

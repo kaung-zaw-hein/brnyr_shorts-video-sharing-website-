@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NoResults = () => {
+const NoResults = ( ) => {
   return (
     <div>NoResults</div>
   )
