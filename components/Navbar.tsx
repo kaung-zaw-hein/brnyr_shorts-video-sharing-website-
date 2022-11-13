@@ -13,7 +13,7 @@ import useAuthStore from '../store/authStore';
 
 const Navbar = () => {
 
-  const { userProfile, addUser, removeUser }= useAuthStore();
+  const { userProfile, addUser, removeUser } : any = useAuthStore();
 
   return (
     <div className="flex items-center justify-between w-full px-4 py-2 border-b-2 border-gray-200">

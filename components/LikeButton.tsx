@@ -10,10 +10,9 @@ interface Iprops {
 }
 
 const LikeButton = ({ likes, handleLike, handleDislike } : Iprops ) => {
-  const [alreadyLiked, setAlreadyLiked] = useState(false);
-  const { userProfile } : any = useAuthStore();
-  const filterLikes = likes?.filter((item) => item._ref === userProfile?._id)
-
+    const [alreadyLiked, setAlreadyLiked] = useState(false);
+    const { userProfile } : any = useAuthStore();
+    const filterLikes = likes?.filter((item) => item._ref === userProfile?._id)
     useEffect(() => {
          if(filterLikes?.length > 0){
             setAlreadyLiked(true);
@@ -24,7 +23,7 @@ const LikeButton = ({ likes, handleLike, handleDislike } : Iprops ) => {
 
   return (
     <div className="flex gap-6">
-        <div className="flex flex-col items-center justify-center mt-4 cursor-pointer">
+    <div className="flex flex-col items-center justify-center mt-4 or-pointer">
             {alreadyLiked ? (
                 <div className="bg-primary  rounded-full p-2 md:p-4 text-[#F51997]" onClick={handleDislike} >
                     <MdFavorite className='text-lg md:text-2xl' />
