@@ -18,7 +18,7 @@ const Sidebar = () => {
   const normalLink = 'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded';
   return (
     <div>
-      <div className="block w-20 mt-3 text-xl xl:hidden"
+      <div className="block m-2 mt-3 ml-4 text-xl xl:hidden"
            onClick={() => setShowSidebar((prev) => !prev)}
       >
         { showSidebar ? <ImCancelCircle  className="mx-auto"/> : <AiOutlineMenu className="mx-auto"/>}
