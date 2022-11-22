@@ -28,7 +28,7 @@ module.exports = {
         blur: '#030303',
       },
       colors: {
-        primary: 'rgb(22, 24, 35)',
+        primary: 'rgb(255, 255, 255)',
       },
       height: {
         '88vh': '88vh',
