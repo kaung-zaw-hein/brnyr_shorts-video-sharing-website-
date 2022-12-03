@@ -52,7 +52,6 @@ const Detail = ({ postDetails } : IProps ) => {
         postId: post._id,
         like
       })
-      console.log(data);
       setPost({ ...post, likes: data.likes })
     
     }
@@ -79,15 +78,15 @@ const Detail = ({ postDetails } : IProps ) => {
   if(!post) return null;
 
   return (
-    <div className="absolute top-0 left-0 flex flex-wrap w-full bg-white lg:flex-nowrap">
-      <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-black">
+    <div className="absolute top-0 left-0 flex flex-wrap w-full lg:flex-nowrap h-[100vh] overflow-hidden">
+      <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-[#18191A]">
         <div className="absolute z-50 flex gap-6 top-6 left-2 lg:left-6">
           <p className="cursor-pointer" onClick={() => router.back()}>
             <MdOutlineCancel className='text-white text-[35px]' />
           </p>
         </div>
         <div className="relative">
-          <div className="lg:h-[100vh] h-[60vh]">
+          <div className="h-[60vh]">
             <video
                     ref={videoRef}
                     loop
@@ -150,7 +149,7 @@ const Detail = ({ postDetails } : IProps ) => {
                 </div>
             </div>
             <div className='px-10'>
-                <p className='text-gray-600 text-md'>{post.caption}</p>
+                <p className='text-gray-300 text-md'>{post.caption}</p>
             </div>
             
             <div className="px-10 mt-10">

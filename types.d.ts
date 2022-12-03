@@ -27,6 +27,7 @@ export interface Video {
       };
     }[];
     userId: string;
+    topic: string;
   }
   
   export interface IUser {

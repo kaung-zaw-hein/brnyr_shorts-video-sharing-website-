@@ -85,14 +85,14 @@ const Upload = () => {
   };
 
   return (
-    <div className='flex w-full h-full absolute left-0 top-[60px] lg:top-[70px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center'>
-      <div className=' bg-white rounded-lg xl:h-[80vh] flex gap-6 flex-wrap justify-center items-center p-14 pt-6'>
+    <div className='flex justify-center w-full '>
+      <div className=' rounded-lg xl:h-[70vh] flex gap-6 flex-wrap justify-center items-center px-14'>
         <div>
           <div>
             <p className='text-2xl font-bold'>Upload Video</p>
             <p className='mt-1 text-gray-400 text-md'>Post a video to your account</p>
           </div>
-          <div className=' border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-10 w-[260px] h-[458px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100'>
+          <div className=' border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-5 w-[260px] h-[458px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100'>
             {loading ? (
               <p className='text-3xl font-semibold text-center text-red-400'>
                 Uploading...
@@ -163,7 +163,7 @@ const Upload = () => {
             type='text'
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
-            className='p-2 border-2 border-gray-200 rounded outline-none lg:after:w-650 text-md'
+            className='p-2 border-2 border-gray-200 rounded outline-none lg:after:w-650 text-md text-[#3d3d3d]'
           />
           <label className='font-medium text-md '>Choose a topic</label>
 
@@ -171,12 +171,12 @@ const Upload = () => {
             onChange={(e) => {
               setTopic(e.target.value);
             }}
-            className='p-2 capitalize border-2 border-gray-200 rounded outline-none cursor-pointer lg:w-650 text-md lg:p-4'
+            className='p-2 capitalize border-2 border-gray-200 rounded outline-none cursor-pointer lg:w-650 text-md lg:p-4 text-[#3d3d3d]'
           >
             {topics.map((item) => (
               <option
                 key={item.name}
-                className='p-2 text-gray-700 capitalize bg-white outline-none text-md hover:bg-slate-300'
+                className='p-2 text-gray-700 capitalize outline-none text-md hover:bg-slate-300'
                 value={item.name}
               >
                 {item.name}

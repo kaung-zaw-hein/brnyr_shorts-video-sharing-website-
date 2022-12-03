@@ -25,15 +25,15 @@ const LikeButton = ({ likes, handleLike, handleDislike } : Iprops ) => {
     <div className="flex gap-6">
     <div className="flex flex-col items-center justify-center mt-4 or-pointer">
             {alreadyLiked ? (
-                <div className="bg-primary  rounded-full p-2 md:p-4 text-[#F51997]" onClick={handleDislike} >
+                <div className="bg-[#18191A] rounded-full p-2 md:p-4 text-[#dce243]" onClick={handleDislike} >
                     <MdFavorite className='text-lg md:text-2xl' />
                 </div>    
             ) : (
-                <div className='p-2 rounded-full bg-primary md:p-4 ' onClick={handleLike} >
+                <div className='p-2 rounded-full bg-[#18191A] md:p-4 ' onClick={handleLike} >
                     <MdFavorite className='text-lg md:text-2xl' />
                 </div>
             )}
-            <p className='font-semibold text-md '>{likes?.length || 0}</p>
+            <p className='font-semibold text-md '>{likes?.length || ""} &nbsp;</p>
         </div>
     </div>
   )

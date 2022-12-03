@@ -15,6 +15,7 @@ export const allPostsQuery = () => {
         image
       },
     likes,
+    topic,
     comments[]{
       comment,
       _key,

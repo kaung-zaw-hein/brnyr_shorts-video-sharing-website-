@@ -24,10 +24,9 @@ interface IComment {
 
 const Comments = ( { isPostingComment, comment, setComment, addComment, comments } : IProps ) => {
   const { userProfile, allUsers } = useAuthStore();
-  console.log(comments);
   return (
-    <div className="border-t-2 border-gray-200 pt-4 px-10 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]">
-      <div className="overflow-scroll lg:h-[475px]">
+    <div className="border-t-2 border-gray-200 pt-4 px-10 bg-[#18191A] border-b-2 lg:pb-0 pb-[100px]">
+      <div className="overflow-scroll lg:h-[400px]">
         {comments?.length ? (
           comments.map((item, idx) => (
             <>
@@ -73,7 +72,7 @@ const Comments = ( { isPostingComment, comment, setComment, addComment, comments
                 <input
                   value={comment}
                   onChange={(e) => setComment(e.target.value.trim())}
-                  className='bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg'
+                  className='text-[#3d3d3d] bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg'
                   placeholder='Add comment..'
                 />
                 <button className='text-gray-400 text-md ' onClick={addComment}>

@@ -22,5 +22,12 @@ export default async function handler(
 
          res.status(200).json(data);
 
+      }else if (req.method === 'PUT') {
+         const { userName, userId } = req.body;
+         const data = await client
+            .patch(userId)
+            .set({userName : userName})
+            .commit();
+         res.status(200).json(data);
       } 
    }

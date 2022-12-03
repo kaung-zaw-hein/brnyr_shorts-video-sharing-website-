@@ -23,8 +23,8 @@ const Search = ({ videos }: { videos: Video[] })  => {
     const searchedAccounts =  allUsers.filter((user : IUser ) => user.userName.toLowerCase().includes(searchTerm.toLowerCase()));
   
     return (
-    <div className="w-full">
-        <div className='z-50 flex w-full gap-10 mb-10 bg-white border-b-2 border-gray-200 md:fixed'>
+    <div className="w-auto px-10">
+        <div className='z-50 flex w-full gap-10 mb-10 '>
             <p onClick={() => setIsAccounts(true)} className={`text-xl  font-semibold cursor-pointer ${accounts} mt-2`}>
             Accounts
             </p>
@@ -37,16 +37,16 @@ const Search = ({ videos }: { videos: Video[] })  => {
             {searchedAccounts.length > 0 ? (
               searchedAccounts.map((user: IUser, idx: number) => (
                 <Link key={idx} href={`/profile/${user._id}`}>
-                  <div className=' flex gap-3 p-2 cursor-pointer font-semibold rounded border-b-2 border-gray-200'>
+                  <div className='flex gap-3 p-2 font-semibold border-b-2 border-gray-200 rounded cursor-pointer '>
                     <div>
                       <Image width={50} height={50} className='rounded-full' alt='user-profile' src={user.image}/>
                     </div>
                     <div>
                       <div>
-                        <p className='flex gap-1 items-center text-lg font-bold text-primary'>
+                        <p className='flex items-center gap-1 text-lg font-bold text-primary'>
                           {user.userName} <GoVerified className='text-blue-400' />
                         </p>
-                        <p className='capitalize text-gray-400 text-sm'>
+                        <p className='text-sm text-gray-400 capitalize'>
                           {user.userName}
                         </p>
                       </div>
@@ -59,7 +59,7 @@ const Search = ({ videos }: { videos: Video[] })  => {
             )}
         </div>
       ) : (
-        <div className='flex flex-wrap gap-6 md:mt-16 md:justify-start '>
+        <div className='flex flex-col flex-wrap items-center gap-6 md:mt-16 md:justify-start '>
             {videos?.length ? (
                 videos.map((video: Video, idx: any) => (
                     <VideoCard data={video} key={idx} />

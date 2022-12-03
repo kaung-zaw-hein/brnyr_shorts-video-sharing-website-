@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
 import '../styles/globals.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -17,19 +16,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   
   return (
     <GoogleOAuthProvider clientId={ `${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}` }>
-      <div className="xl:w-full m-auto overflow-hidden h-[100vh] bg-[#1B2730]">
+      <div className="xl:w-full m-auto min-h-[100vh] bg-[#18191A]">
         <Navbar/>
-        <div className="flex gap-6 md:gap-8">
-          <div className="h-[92vh] overflow-hidden ">
-            <Sidebar/>
-          </div>
-          <div className="mt-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1">
+          <div className="flex flex-col">
             <Component {...pageProps} />
           </div>
-          <div className="h-[92vh] overflow-hidden ">
-            <Sidebar/>
-          </div>
-        </div>
       </div>
     </GoogleOAuthProvider>
   )
