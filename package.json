@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "@react-oauth/google": "^0.2.6",
-    "@sanity/client": "^3.3.6",
+    "@sanity/client": "^3.3.0",
     "axios": "^0.27.2",
     "gapi-script": "^1.2.0",
-    "next": "12.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-google-login": "^5.2.2",
-    "react-icons": "^4.4.0",
+    "react-icons": "^4.3.1",
     "uuidv4": "^6.2.13",
-    "zustand": "^4.1.1"
+    "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
