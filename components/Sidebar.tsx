@@ -10,14 +10,17 @@ import Image from 'next/image';
 const Sidebar = ({ tags} : any ) => {
   const [ showSidebar, setShowSidebar ] = useState(true);
   const { fetchAllUsers, allUsers, userProfile } : any = useAuthStore();
+  let mainUser, SugAccounts;
 
-  const mainUser = allUsers.filter((user : any) =>{
-    return user._id === userProfile._id;
-  });
-
-  let SugAccounts =allUsers.filter((user : any) =>{
-    return user._id !== userProfile._id;
-  });
+  if(userProfile){
+    mainUser = allUsers.filter((user : any) =>{
+      return user._id === userProfile._id;
+    });
+  
+    SugAccounts =allUsers.filter((user : any) =>{
+      return user._id !== userProfile._id;
+    });
+  }
 
   useEffect(() => {
     fetchAllUsers();
