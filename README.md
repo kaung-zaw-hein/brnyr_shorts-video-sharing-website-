@@ -1,3 +1,10 @@
+# Video Sharing App
+
+![image](https://user-images.githubusercontent.com/62888962/205449724-9ba777c9-eac8-4109-90ad-3cccf3c1e685.png)
+
+ Using Nextjs, React, Node.js, Sanity for backend googleOauth The App is called Brnyr Video sharing app and it is a simple social media app that allows users to post interesting short videos that happened in their lives. Reference from JavaScript Mastery project
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
