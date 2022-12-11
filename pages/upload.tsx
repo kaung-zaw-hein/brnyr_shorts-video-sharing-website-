@@ -7,12 +7,11 @@ import axios from 'axios';
 
 import useAuthStore from '../store/authStore';
 import { client } from '../utils/client';
-import { topics } from '../utils/constants';
 import { BASE_URL } from '../utils';
 
 const Upload = () => {
   const [caption, setCaption] = useState('');
-  const [topic, setTopic] = useState<String>(topics[0].name);
+  const [topic, setTopic] = useState("Dev");
   const [loading, setLoading] = useState<Boolean>(false);
   const [savingPost, setSavingPost] = useState<Boolean>(false);
   const [videoAsset, setVideoAsset] = useState<SanityAssetDocument | undefined>();
@@ -92,7 +91,7 @@ const Upload = () => {
             <p className='text-2xl font-bold'>Upload Video</p>
             <p className='mt-1 text-gray-400 text-md'>Post a video to your account</p>
           </div>
-          <div className=' border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-5 w-[260px] h-[458px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100'>
+          <div className=' border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-5 w-[260px] h-[458px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-800 transition-all'>
             {loading ? (
               <p className='text-3xl font-semibold text-center text-red-400'>
                 Uploading...
@@ -117,7 +116,7 @@ const Upload = () => {
                         Up to 10 minutes <br />
                         Less than 2 GB
                       </p>
-                      <p className='bg-[#F51997] text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none'>
+                      <p className='bg-[#19b3] text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none'>
                         Select file
                       </p>
                     </div>
@@ -166,23 +165,12 @@ const Upload = () => {
             className='p-2 border-2 border-gray-200 rounded outline-none lg:after:w-650 text-md text-[#3d3d3d]'
           />
           <label className='font-medium text-md '>Choose a topic</label>
-
-          <select
-            onChange={(e) => {
-              setTopic(e.target.value);
-            }}
+          <input
+            type='text'
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
             className='p-2 capitalize border-2 border-gray-200 rounded outline-none cursor-pointer lg:w-650 text-md lg:p-4 text-[#3d3d3d]'
-          >
-            {topics.map((item) => (
-              <option
-                key={item.name}
-                className='p-2 text-gray-700 capitalize outline-none text-md hover:bg-slate-300'
-                value={item.name}
-              >
-                {item.name}
-              </option>
-            ))}
-          </select>
+          />
           <div className='flex gap-6 mt-10'>
             <button
               onClick={handleDiscard}
@@ -195,7 +183,7 @@ const Upload = () => {
               disabled={videoAsset?.url ? false : true}
               onClick={handlePost}
               type='button'
-              className='bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none'
+              className='bg-[#19b3] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none'
             >
               {savingPost ? 'Posting...' : 'Post'}
             </button>
